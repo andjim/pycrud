@@ -24,3 +24,9 @@ def get_products():
   all_products = Country.query.all()
   result = countries_schema.dump(all_products)
   return jsonify(result.data)
+
+@app.route('/country/<id>', methods=['GET'])
+def get_product(id):
+  product = Country.query.get(id)
+  result = country_schema.dump(product)
+  return jsonify(result.data)
