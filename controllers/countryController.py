@@ -30,3 +30,12 @@ def get_product(id):
   product = Country.query.get(id)
   result = country_schema.dump(product)
   return jsonify(result.data)
+@app.route("/country/<id>", methods=["PUT"]):
+    def update_country(id):
+        pass
+
+@app.route("/country/<id>", methods=["DELETE"])
+def country_unlink(id):
+    pass
+
+
